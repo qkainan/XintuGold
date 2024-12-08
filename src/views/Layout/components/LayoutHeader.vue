@@ -40,7 +40,7 @@
 /* 媒体查询：针对手机屏幕的样式 */
 @media (max-width: 768px) {
   .app-header {
-    width: 34%;
+    width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
     background: #1A1C22;

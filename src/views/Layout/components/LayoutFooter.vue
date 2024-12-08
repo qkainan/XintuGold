@@ -62,7 +62,7 @@
 /* 媒体查询：针对手机屏幕的样式 */
 @media (max-width: 768px) {
   .app_footer {
-    width: 34%;
+    width: 100%;
     margin: 0 auto;
     overflow: hidden;
     background-color:#1A1C22;

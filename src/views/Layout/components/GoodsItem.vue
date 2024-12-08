@@ -1,7 +1,7 @@
 <script setup>
-import {useLayoutStore} from '@/stores/layoutStore.js';
-import {onBeforeUnmount, onMounted} from 'vue';
-import {computed} from 'vue';
+import { useLayoutStore } from '@/stores/layoutStore.js';
+import { onBeforeUnmount, onMounted } from 'vue';
+import { computed } from 'vue';
 
 
 const layoutStore = useLayoutStore(); // 使用 layoutStore
@@ -51,22 +51,22 @@ const formattedTime = computed(() => {
       <div class="quote-price-table">
         <div v-for="item in layoutStore.goldQuoteList" :key="item.id" class="price-table-row">
 
-            <div class="price-item ">
-              <span class="symbol-name">{{ item.sname }}</span>
-            </div>
+          <div class="price-item ">
+            <span class="symbol-name">{{ item.sname }}</span>
+          </div>
 
-            <div class="price-item"><!-- 回购价格 -->
-              <span class="symbole-price">{{ item.bid }}</span>
-            </div>
+          <div class="price-item"><!-- 回购价格 -->
+            <span class="symbole-price">{{ item.bid }}</span>
+          </div>
 
-            <div class="price-item"><!-- 销售价格 -->
-              <span class="symbole-price">{{ item.ask }}</span>
-            </div>
+          <div class="price-item"><!-- 销售价格 -->
+            <span class="symbole-price">{{ item.ask }}</span>
+          </div>
 
-            <div class="price-item"><!-- 高/低价格 -->
-              <span class="symbol-price-rise" style="display: block;">{{ item.high }}</span>
-              <span class="symbol-price-fall" style="display: block;">{{ item.low }}</span>
-            </div>
+          <div class="price-item"><!-- 高/低价格 -->
+            <span class="symbol-price-rise" style="display: block;">{{ item.high }}</span>
+            <span class="symbol-price-fall" style="display: block;">{{ item.low }}</span>
+          </div>
 
         </div>
       </div>
@@ -108,7 +108,8 @@ const formattedTime = computed(() => {
 .price-table-header {
   background: #CCAC44;
   display: flex;
-  justify-content: space-between; /* 在子元素之间创建等距空间 */
+  justify-content: space-between;
+  /* 在子元素之间创建等距空间 */
   border-right: 1px solid #1dc779;
 }
 
@@ -116,11 +117,13 @@ const formattedTime = computed(() => {
   font-family: Microsoft YaHei, Arial, Helvetica, sans-serif;
   font-size: 20px;
 
-  flex: 0 1 auto; /* 防止子元素拉伸或压缩 */
+  flex: 0 1 auto;
+  /* 防止子元素拉伸或压缩 */
   /* 你可以在这里添加其他样式，比如宽度、高度、背景色等 */
   color: #ffffff;
   padding: 10px;
-  text-align: center; /* 可选，使内容居中 */
+  text-align: center;
+  /* 可选，使内容居中 */
 }
 
 .price-table-header .title {
@@ -142,40 +145,49 @@ const formattedTime = computed(() => {
 
 .quote-page .quote-page-content .quote-price-table .price-table-row {
   display: flex;
-  justify-content: space-between; /* 在子元素之间创建等距空间 */
+  justify-content: space-between;
+  /* 在子元素之间创建等距空间 */
 
 
   padding: 3px 0;
   line-height: 23px;
 
-  flex-wrap: nowrap; /* 防止子元素换行 */
-  overflow-x: auto; /* 如果需要，允许水平滚动 */
+  flex-wrap: nowrap;
+  /* 防止子元素换行 */
+  overflow-x: auto;
+  /* 如果需要，允许水平滚动 */
 }
 
 
 .quote-page .quote-page-content .quote-page-table .price-table-row .price-item {
-  flex: 0 1 auto; /* 防止子元素拉伸或压缩 */
+  flex: 0 1 auto;
+  /* 防止子元素拉伸或压缩 */
   padding: 10px;
-  text-align: center; /* 可选，使内容居中 */
+  text-align: center;
+  /* 可选，使内容居中 */
 }
 
 
-.quote-page .quote-page-content .quote-page-table .price-table-row .price-item span{
-  flex: 0 0 calc(25% - 20px); /* 每个div占据大约25%的宽度，减去左右边距 */
+.quote-page .quote-page-content .quote-page-table .price-table-row .price-item span {
+  flex: 0 0 calc(25% - 20px);
+  /* 每个div占据大约25%的宽度，减去左右边距 */
   margin: 10px;
   padding: 20px;
   box-sizing: border-box;
 }
 
 .price-table-row div {
-  flex: 0 0 calc(25% - 20px); /* 每个div占据大约25%的宽度，减去左右边距 */
+  flex: 0 0 calc(25% - 20px);
+  /* 每个div占据大约25%的宽度，减去左右边距 */
   margin-bottom: 0px;
   padding-top: 15px;
   box-sizing: border-box;
-  text-align: center; /* 可选，使内容居中 */
+  text-align: center;
+  /* 可选，使内容居中 */
 
   border-right: 3px solid #1A1C22;
 }
+
 .price-table-row div:last-child {
   border-right: none;
 }
@@ -212,8 +224,9 @@ const formattedTime = computed(() => {
 }
 
 
-.quote-page .quote-price-table .price-table-row .price-item-highAndLow{
-  text-align: center; /* 水平居中 */
+.quote-page .quote-price-table .price-table-row .price-item-highAndLow {
+  text-align: center;
+  /* 水平居中 */
 }
 
 .quote-page .quote-price-table .symbol-name {
@@ -227,7 +240,7 @@ const formattedTime = computed(() => {
 /* 媒体查询：针对手机屏幕的样式 */
 @media (max-width: 768px) {
   .divider {
-    width: 34%;
+    width: 100%;
     margin: 0 auto;
     background: #CCAC44;
 
@@ -248,7 +261,7 @@ const formattedTime = computed(() => {
   }
 
   .quote-page {
-    width: 34%;
+    width: 100%;
     margin: 0 auto;
     background: #1A1C22;
     min-height: 100%;
@@ -263,7 +276,8 @@ const formattedTime = computed(() => {
   .price-table-header {
     background: #CCAC44;
     display: flex;
-    justify-content: space-between; /* 在子元素之间创建等距空间 */
+    justify-content: space-between;
+    /* 在子元素之间创建等距空间 */
     border-right: 1px solid #1dc779;
   }
 
@@ -271,11 +285,13 @@ const formattedTime = computed(() => {
     font-family: Microsoft YaHei, Arial, Helvetica, sans-serif;
     font-size: 20px;
 
-    flex: 0 1 auto; /* 防止子元素拉伸或压缩 */
+    flex: 0 1 auto;
+    /* 防止子元素拉伸或压缩 */
     /* 你可以在这里添加其他样式，比如宽度、高度、背景色等 */
     color: #ffffff;
     padding: 10px;
-    text-align: center; /* 可选，使内容居中 */
+    text-align: center;
+    /* 可选，使内容居中 */
   }
 
   .price-table-header .title {
@@ -297,40 +313,49 @@ const formattedTime = computed(() => {
 
   .quote-page .quote-page-content .quote-price-table .price-table-row {
     display: flex;
-    justify-content: space-between; /* 在子元素之间创建等距空间 */
+    justify-content: space-between;
+    /* 在子元素之间创建等距空间 */
 
 
     padding: 3px 0;
     line-height: 23px;
 
-    flex-wrap: nowrap; /* 防止子元素换行 */
-    overflow-x: auto; /* 如果需要，允许水平滚动 */
+    flex-wrap: nowrap;
+    /* 防止子元素换行 */
+    overflow-x: auto;
+    /* 如果需要，允许水平滚动 */
   }
 
 
   .quote-page .quote-page-content .quote-page-table .price-table-row .price-item {
-    flex: 0 1 auto; /* 防止子元素拉伸或压缩 */
+    flex: 0 1 auto;
+    /* 防止子元素拉伸或压缩 */
     padding: 10px;
-    text-align: center; /* 可选，使内容居中 */
+    text-align: center;
+    /* 可选，使内容居中 */
   }
 
 
-  .quote-page .quote-page-content .quote-page-table .price-table-row .price-item span{
-    flex: 0 0 calc(25% - 20px); /* 每个div占据大约25%的宽度，减去左右边距 */
+  .quote-page .quote-page-content .quote-page-table .price-table-row .price-item span {
+    flex: 0 0 calc(25% - 20px);
+    /* 每个div占据大约25%的宽度，减去左右边距 */
     margin: 10px;
     padding: 20px;
     box-sizing: border-box;
   }
 
   .price-table-row div {
-    flex: 0 0 calc(25% - 20px); /* 每个div占据大约25%的宽度，减去左右边距 */
+    flex: 0 0 calc(25% - 20px);
+    /* 每个div占据大约25%的宽度，减去左右边距 */
     margin-bottom: 0px;
     padding-top: 15px;
     box-sizing: border-box;
-    text-align: center; /* 可选，使内容居中 */
+    text-align: center;
+    /* 可选，使内容居中 */
 
     border-right: 3px solid #1A1C22;
   }
+
   .price-table-row div:last-child {
     border-right: none;
   }
@@ -367,8 +392,9 @@ const formattedTime = computed(() => {
   }
 
 
-  .quote-page .quote-price-table .price-table-row .price-item-highAndLow{
-    text-align: center; /* 水平居中 */
+  .quote-page .quote-price-table .price-table-row .price-item-highAndLow {
+    text-align: center;
+    /* 水平居中 */
   }
 
   .quote-page .quote-price-table .symbol-name {
@@ -378,5 +404,4 @@ const formattedTime = computed(() => {
     color: #ffbf24
   }
 }
-
 </style>
